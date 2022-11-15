@@ -1,31 +1,20 @@
-const express = require('express')
-const blogposts = require('./data/blogposts')
-const notes = require('./data/notes')
-const dotenv = require('dotenv')
+import express from 'express'
+import connectDB from './config/db.js'
+import notes from './data/notes.js'
+import dotenv from 'dotenv'
+import blogRoutes from './routes/blogRoutes.js'
+import noteRoutes from './routes/noteRoutes.js'
 
 dotenv.config()
 
 const app = express()
-
+connectDB()
 app.get('/', (req, res) => {
   res.send('API is running...')
 })
 
-app.get('/api/blogposts', (req, res) => {
-  res.json(blogposts)
-})
-app.get('/api/blogposts/:id', (req, res) => {
-  const blogpost = blogposts.find((p) => p._id === req.params.id)
-  res.json(blogpost)
-})
-
-app.get('/api/notes', (req, res) => {
-  res.json(notes)
-})
-app.get('/api/notes/:id', (req, res) => {
-  const note = note.find((p) => p._id === req.params.id)
-  res.json(note)
-})
+app.use('/api/blogposts', blogRoutes)
+app.use('/api/notes', noteRoutes)
 
 const PORT = process.env.PORT || 5000
 

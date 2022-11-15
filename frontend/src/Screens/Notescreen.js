@@ -10,7 +10,7 @@ const Notescreen = () => {
       <Navigation />
       <Container>
         <Link href='/'>
-          <Button variant='dark'>Go Back</Button>
+          <Button variant='dark'>Home</Button>
         </Link>
       </Container>
       <Notes />

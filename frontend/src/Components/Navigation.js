@@ -6,7 +6,7 @@ import { Link } from 'wouter'
 
 function Navigation() {
   return (
-    <Navbar bg='light' variant='light' expand='lg' sticky='top'>
+    <Navbar bg='dark' variant='dark' expand='lg' sticky='top'>
       <Container>
         <Link href='/'>
           <Navbar.Brand>JRC Hub</Navbar.Brand>

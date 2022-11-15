@@ -8,6 +8,7 @@ import Notes from './Components/Notes'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Route } from 'wouter'
 import Notescreen from './Screens/Notescreen'
+import 'bootswatch/dist/litera/bootstrap.min.css'
 
 function App() {
   return (

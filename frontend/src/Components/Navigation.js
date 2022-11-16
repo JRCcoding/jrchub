@@ -21,7 +21,9 @@ function Navigation() {
               <Nav.Link>Notes</Nav.Link>
             </Link>
             <NavDropdown title='Other' id='basic-nav-dropdown'>
-              <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
+              <Link href='/Widgetscreen'>
+                <NavDropdown.Item>Widgets</NavDropdown.Item>
+              </Link>
               <NavDropdown.Item href='#action/3.2'>
                 Another action
               </NavDropdown.Item>

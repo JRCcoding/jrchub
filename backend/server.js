@@ -5,7 +5,6 @@ import dotenv from 'dotenv'
 import blogRoutes from './routes/blogRoutes.js'
 import noteRoutes from './routes/noteRoutes.js'
 import path from 'path'
-import morgan from 'morgan'
 import { fileURLToPath } from 'url'
 
 dotenv.config()

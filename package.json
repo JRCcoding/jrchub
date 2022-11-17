@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "netlify-cli": "^12.2.0",
+    "serverless-http": "^3.1.0"
+  }
+}

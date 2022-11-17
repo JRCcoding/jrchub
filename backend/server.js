@@ -4,6 +4,9 @@ import notes from './data/notes.js'
 import dotenv from 'dotenv'
 import blogRoutes from './routes/blogRoutes.js'
 import noteRoutes from './routes/noteRoutes.js'
+import path from 'path'
+import morgan from 'morgan'
+import { fileURLToPath } from 'url'
 
 dotenv.config()
 
@@ -12,12 +15,13 @@ connectDB()
 
 app.use('/api/blogposts', blogRoutes)
 app.use('/api/notes', noteRoutes)
-
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/frontend/build')))
 
   app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'))
   )
 } else {
   app.get('/', (req, res) => {

@@ -2,5 +2,21 @@
   "dependencies": {
     "netlify-cli": "^12.2.0",
     "serverless-http": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "jrchub",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrccoding/jrchub.git"
+  },
+  "author": "Josh Claxton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrccoding/jrchub/issues"
   }
 }

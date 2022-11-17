@@ -3,7 +3,7 @@
   "proxy": "http://127.0.0.1:5000",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JRCcoding.github.io/jrchub",
+  "homepage": "https://jrchub.herokuapp.com/",
   "resolutions": {
     "**/@typescript-eslint/eslint-plugin": "^4.1.1",
     "**/@typescript-eslint/parser": "^4.1.1"

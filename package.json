@@ -4,6 +4,7 @@
   "description": "Josh Claxton's Utility Hub",
   "main": "server.js",
   "type": "module",
+  "homepage": "https://jrchub.herokuapp.com/",
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",

@@ -5,7 +5,7 @@ import dotenv from 'dotenv'
 import blogRoutes from './routes/blogRoutes.js'
 import noteRoutes from './routes/noteRoutes.js'
 
-dotenv.config()
+dotenv.config({ path: __dirname + '/.env' })
 
 const app = express()
 connectDB()

@@ -5,12 +5,26 @@ import dotenv from 'dotenv'
 import blogRoutes from './routes/blogRoutes.js'
 import noteRoutes from './routes/noteRoutes.js'
 import path from 'path'
-import { fileURLToPath } from 'url'
+// import { fileURLToPath } from 'url'
 
 dotenv.config()
 
 const app = express()
 connectDB()
+// app.use((req, res, next) => {
+//   const error = new Error(`Not Found - ${req.originalUrl}`)
+//   res.status(404)
+//   next(error)
+// })
+
+app.use((err, req, res, next) => {
+  const statusCode = res.statusCode === 200 ? 500 : res.statusCode
+  res.status(statusCode)
+  res.json({
+    message: err.message,
+    stack: process.env.NODE_ENV === 'production' ? null : err.stack,
+  })
+})
 
 app.use('/api/blogposts', blogRoutes)
 app.use('/api/notes', noteRoutes)

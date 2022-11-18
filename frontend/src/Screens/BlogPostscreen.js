@@ -12,7 +12,7 @@ const BlogPostscreen = () => {
 
   useEffect(() => {
     const fetchBlogpost = async () => {
-      const { data } = await axios.get('/blogposts:id')
+      const { data } = await axios.get('/api/blogposts/:id')
 
       setBlogpost(data)
     }
@@ -25,9 +25,9 @@ const BlogPostscreen = () => {
         <Link href='/Blogscreen'>
           <Button variant='dark'>Back</Button>
         </Link>
-        <Row key={blogpost}>
+        <Row>
           <Col>
-            <h1>Testing {blogpost.name}</h1>
+            <h1>Test failed{blogpost.name}</h1>
           </Col>
         </Row>
       </Container>

@@ -21,8 +21,19 @@ const Posts = ({ blogpost }) => {
     <Container>
       <div>
         <h2>Blog Posts:</h2>
+        <Row>
+          <Col>
+            <h3>Date:</h3>
+          </Col>
+          <Col>
+            <h3>Title:</h3>
+          </Col>
+          <Col>
+            <h3>Content:</h3>
+          </Col>
+        </Row>
         {blogposts &&
-          blogposts.map((blogpost) => (
+          blogposts.reverse().map((blogpost) => (
             <div className='blogposts' key={blogpost}>
               <Row>
                 <Col>{blogpost.date}</Col>

@@ -11,7 +11,7 @@ router.get(
     res.json(blogposts)
   })
 )
-router.route(
+router.get(
   '/:id',
   asyncHandler(async (req, res) => {
     const blogpost = await Blog.findById(req.params.id)
@@ -23,5 +23,4 @@ router.route(
     }
   })
 )
-
 export default router

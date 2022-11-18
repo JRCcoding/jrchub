@@ -28,7 +28,7 @@ const Posts = ({ blogpost }) => {
                 <Col>{blogpost.date}</Col>
                 <Col>{blogpost.name}</Col>
                 <Col>
-                  <Link href={`/blogpost/${blogpost._id}`}>
+                  <Link href={`/blogposts/${blogpost._id}`}>
                     {blogpost.content.substring(0, 15)}...{' '}
                   </Link>
                 </Col>

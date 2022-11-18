@@ -28,7 +28,7 @@ const BlogPostscreen = () => {
       </Container>
       <Row>
         <Col>
-          <h1>Testing {blogpost.name}</h1>
+          <h1>Testing {blogpost.content}</h1>
         </Col>
       </Row>
     </div>

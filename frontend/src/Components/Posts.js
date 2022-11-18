@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 import { Container } from 'react-bootstrap'
+import { Link } from 'wouter'
 
 // import { blogposts } from '../data.js'
 
-const Posts = () => {
+const Posts = ({ blogpost }) => {
   const [blogposts, setBlogposts] = useState()
 
   useEffect(() => {
@@ -26,7 +27,11 @@ const Posts = () => {
               <Row>
                 <Col>{blogpost.date}</Col>
                 <Col>{blogpost.name}</Col>
-                <Col>{blogpost.content}</Col>
+                <Col>
+                  <Link href={`/blogpost/${blogpost._id}`}>
+                    {blogpost.content.substring(0, 15)}...{' '}
+                  </Link>
+                </Col>
               </Row>
             </div>
           ))}

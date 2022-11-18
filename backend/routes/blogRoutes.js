@@ -11,7 +11,7 @@ router.get(
     res.json(blogposts)
   })
 )
-router.get(
+router.route(
   '/:id',
   asyncHandler(async (req, res) => {
     const blogpost = await Blog.findById(req.params.id)
@@ -19,7 +19,7 @@ router.get(
     if (blogpost) {
       res.json(blogpost)
     } else {
-      res.status(404)
+      res.status(404).json({ message: 'Blog Post not found' })
     }
   })
 )

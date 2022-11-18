@@ -6,6 +6,7 @@ import { Route } from 'wouter'
 import Notescreen from './Screens/Notescreen'
 import 'bootswatch/dist/lux/bootstrap.min.css'
 import Widgetscreen from './Screens/Widgetscreen'
+import BlogPostscreen from './Screens/BlogPostscreen'
 //Testing deploy to so and so
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
       </Route>
       <Route path='/Notescreen'>
         <Notescreen />
+      </Route>
+      <Route path='/blogposts/:id'>
+        <BlogPostscreen />
       </Route>
       <Route path='/Widgetscreen'>
         <Widgetscreen />

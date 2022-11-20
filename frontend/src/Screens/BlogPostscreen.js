@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Row, Container, Button } from 'react-bootstrap'
+import { Col, Row, Container, Button, Card } from 'react-bootstrap'
 import Navigation from '../Components/Navigation'
 import axios from 'axios'
 import { LinkContainer } from 'react-router-bootstrap'
@@ -24,18 +24,21 @@ const BlogPostscreen = ({ match }) => {
     <div>
       <Navigation />
       <Container>
-        <LinkContainer to='/Blogscreen'>
-          <Button variant='dark'>Back</Button>
-        </LinkContainer>
-        <Row>
-          <Col>
-            {blogpost.date}
-            <br />
-            {blogpost.name}
-            <br />
+        <Card>
+          <Card.Body>
+            <Card.Title>
+              {blogpost.date}
+              <br></br>
+              {blogpost.name}
+            </Card.Title>
+
             {blogpost.content}
-          </Col>
-        </Row>
+            <br></br>
+            <LinkContainer to='/Blogscreen'>
+              <Button variant='dark'>Back</Button>
+            </LinkContainer>
+          </Card.Body>
+        </Card>
       </Container>
     </div>
   )

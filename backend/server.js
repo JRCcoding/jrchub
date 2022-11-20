@@ -5,7 +5,8 @@ import dotenv from 'dotenv'
 import blogRoutes from './routes/blogRoutes.js'
 import noteRoutes from './routes/noteRoutes.js'
 import path from 'path'
-// import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
 dotenv.config()
 
@@ -28,6 +29,8 @@ app.use((err, req, res, next) => {
 
 app.use('/api/blogposts', blogRoutes)
 app.use('/api/notes', noteRoutes)
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 // const __filename = fileURLToPath(import.meta.url)
 // const __dirname = path.dirname(__filename)
 // if (process.env.NODE_ENV === 'production') {

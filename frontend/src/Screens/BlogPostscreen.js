@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react'
 import { Col, Row, Container, Button } from 'react-bootstrap'
 import Navigation from '../Components/Navigation'
 import axios from 'axios'
-import { Link } from 'wouter'
+import { LinkContainer } from 'react-router-bootstrap'
+import { useParams } from 'react-router-dom'
 
 // import { Link } from 'wouter'
 // import { Button, Container } from 'react-bootstrap'
 
-const BlogPostscreen = () => {
-  const [blogpost, setBlogpost] = useState()
+const BlogPostscreen = ({ match }) => {
+  const [blogpost, setBlogpost] = useState({})
+  const { id } = useParams()
 
   useEffect(() => {
     const fetchBlogpost = async () => {
-      const { data } = await axios.get('/api/blogposts/:id')
+      const { data } = await axios.get(`/api/blogposts/${id}`)
 
       setBlogpost(data)
     }
@@ -22,12 +24,16 @@ const BlogPostscreen = () => {
     <div>
       <Navigation />
       <Container>
-        <Link href='/Blogscreen'>
+        <LinkContainer to='/Blogscreen'>
           <Button variant='dark'>Back</Button>
-        </Link>
+        </LinkContainer>
         <Row>
           <Col>
-            <h1>Test failed{blogpost.name}</h1>
+            {blogpost.date}
+            <br />
+            {blogpost.name}
+            <br />
+            {blogpost.content}
           </Col>
         </Row>
       </Container>

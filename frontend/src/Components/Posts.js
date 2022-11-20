@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 import { Container } from 'react-bootstrap'
-import { Link } from 'wouter'
+import { Link } from 'react-router-dom'
 
 // import { blogposts } from '../data.js'
 
@@ -39,7 +39,7 @@ const Posts = ({ blogpost }) => {
                 <Col>{blogpost.date}</Col>
                 <Col>{blogpost.name}</Col>
                 <Col>
-                  <Link href={`/blogposts/${blogpost._id}`}>
+                  <Link to={`/blogpost/${blogpost._id}`}>
                     {blogpost.content.substring(0, 15)}...{' '}
                   </Link>
                 </Col>
